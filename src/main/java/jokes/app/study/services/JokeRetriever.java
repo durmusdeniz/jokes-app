@@ -7,11 +7,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class JokeRetriever {
 
+    private final ChuckNorrisQuotes chuckNorrisQuotes;
 
+    public JokeRetriever(){
+        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    }
 
 
     public String getRandomJoke(){
-        return new ChuckNorrisQuotes().getRandomQuote();
+        return chuckNorrisQuotes.getRandomQuote();
     }
 
 
